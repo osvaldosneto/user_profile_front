@@ -1,0 +1,59 @@
+<mat-card class="user-form-card">
+    <mat-card-title>{{ isEditMode ? 'Editar Usuário' : 'Cadastrar Usuário' }}</mat-card-title>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" placeholder="Digite o username" [disabled]="isEditMode">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" placeholder="Digite o email">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="phone" type="tel"  placeholder="+55 (xx) xxxxx xxxx" (input)="formatPhone($event)" >
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Birthdate</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthdate" placeholder="Selecione a data de nascimento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>  
+        
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="Digite o primeiro nome">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" placeholder="Digite o sobrenome">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Profile</mat-label>
+                <mat-select formControlName="profile" placeholder="Selecione o perfil">
+                <mat-option value="ADMIN">Admin</mat-option>
+                <mat-option value="USER">User</mat-option>
+                </mat-select>
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" placeholder="Digite a senha" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder senha'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="button-group">
+            <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Salvar' : 'Cadastrar' }}</button>
+            <button mat-raised-button color="primary" type="button" (click)="onCancel()">Cancelar</button>
+        </div>
+    </form>
+</mat-card>
+  

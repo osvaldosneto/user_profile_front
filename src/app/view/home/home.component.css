@@ -1,0 +1,61 @@
+/* Contêiner principal que ocupa toda a tela */
+.center-container {
+    display: flex;
+    justify-content: center; /* Centraliza o card horizontalmente */
+    align-items: flex-start; /* Alinha o card ao topo */
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100%; /* Ocupa toda a largura da tela */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f5; /* Fundo suave */
+}
+
+/* Card que envolve a tabela */
+mat-card {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+}
+
+/* Contêiner do título e do botão, para alinhar na mesma linha */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px; /* Espaço entre o header e a tabela */
+}
+
+/* Estilo da tabela para ocupar o espaço do card */
+.full-width-table {
+    width: 100%; /* Faz a tabela ocupar todo o espaço disponível */
+    border-collapse: collapse; /* Remove espaços extras entre células */
+}
+
+/* Ajuste das células da tabela */
+.mat-header-cell, .mat-cell {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #424242;
+    border-right: 1px solid #e0e0e0; /* Borda para separar colunas */
+}
+
+.mat-header-cell {
+    font-weight: 600;
+    background-color: #f4f4f9;
+}
+
+.mat-row {
+    background-color: #ffffff;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Remove a borda da última célula para um visual mais limpo */
+.mat-cell:last-child {
+    border-right: none;
+}

@@ -1,0 +1,56 @@
+/* Estilo global para garantir que o conteúdo não fique sobre o footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+  
+.main-content {
+    flex: 1;
+}
+  
+.footer-container {
+    background-color: #2f2f2f;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  
+.copyright {
+    font-size: 14px;
+    margin: 0;
+}
+  
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+  
+.social-icons a {
+    color: #fff;
+    transition: color 0.3s;
+}
+  
+.social-icons a:hover {
+    color: #1e90ff;
+}
+  
+.footer-container a {
+    text-decoration: none;
+}
+  
