@@ -1,28 +1,50 @@
-# UserProfileManagement
+# Angular Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+## Descrição
 
-## Development server
+Esta aplicação Angular é um sistema de gerenciamento de perfis de usuário que permite visualizar, editar e gerenciar informações de usuários. A aplicação inclui funcionalidades como login, cadastro, e gerenciamento de permissões, oferecendo uma interface intuitiva para administração de dados de perfil.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Funcionalidades Principais
 
-## Code scaffolding
+- **Login e Registro de Usuários:** Permite que novos usuários se cadastrem e façam login com suas credenciais.
+- **Visualização de Perfis:** Exibe uma lista de usuários cadastrados, mostrando detalhes como nome, email, e status do perfil.
+- **Edição de Perfis:** Usuários autorizados podem editar informações do perfil, como nome, email, e configurações de conta.
+- **Gerenciamento de Permissões:** Administra permissões de usuários, permitindo acesso a funcionalidades específicas com base no nível de acesso.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos
 
-## Build
+Para executar esta aplicação, você precisará ter os seguintes softwares instalados:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Node.js** (versão 18 ou superior): [Instale Node.js](https://nodejs.org/)
+- **Angular CLI** (versão 15 ou superior): Pode ser instalado globalmente com o comando:
+  ```bash
+  npm install -g @angular/cli
+  ```
+- **Git** : Para controle de versão e clonagem do repositório.
 
-## Running unit tests
+# Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Siga os passos abaixo para configurar e executar a aplicação localmente:
 
-## Running end-to-end tests
+1. **Clone o Repositório:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   https://github.com/osvaldosneto/user_profile_back.git
+   cd user_profile_back
+   ```
+   
+2. Instale as Dependências:
 
-## Further help
+Execute o comando abaixo para instalar todas as dependências necessárias:
+   
+   ```bash
+   npm install
+   ```   
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# user_profile_front
+# Executando a Aplicação
+Para rodar a aplicação em ambiente de desenvolvimento, use o comando:
+     ```bash
+   npm start
+   ```    
+   
+Isso iniciará a aplicação na URL http://localhost:4200/. Você pode acessar a aplicação no seu navegador digitando esta URL.

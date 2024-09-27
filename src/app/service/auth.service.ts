@@ -1,20 +1,21 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, tap, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-    private apiUrl = 'http://localhost:8080/api';
+    private apiUrl = environment.apiUrl;
     private tokenKey = 'authToken';
     private roleKey = 'role';
 
     constructor(private http: HttpClient) {}
 
     login(username: string, password: string): Observable<{ token: string }> {
-        return this.http.post<{ token: string; profileType: string }>(`${this.apiUrl}/login`, { username, password }).pipe(
+        return this.http.post<{ token: string; profileType: string }>(`${this.apiUrl}login`, { username, password }).pipe(
         tap((response: { token: string; profileType: string}) => {
             this.setToken(response.token);
             this.setRole(response.profileType);

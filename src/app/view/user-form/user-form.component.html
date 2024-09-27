@@ -34,7 +34,7 @@
                 <input matInput formControlName="lastName" placeholder="Digite o sobrenome">
             </mat-form-field>
         
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" *ngIf="isAdmin()">
                 <mat-label>Profile</mat-label>
                 <mat-select formControlName="profile" placeholder="Selecione o perfil">
                 <mat-option value="ADMIN">Admin</mat-option>

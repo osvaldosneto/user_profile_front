@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/app/models/user.dto';
+import { AuthService } from 'src/app/service/auth.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class UserFormComponent implements OnInit {
     constructor(
         private fb: UntypedFormBuilder,
         private userService: UserService,
-        private router: Router
+        private router: Router,
+        private authService: AuthService
     ) {
         this.userForm = this.fb.group({
         username: ['', Validators.required],
@@ -80,7 +82,7 @@ export class UserFormComponent implements OnInit {
     }
 
     onSubmit(): void {
-        const user: UserDTO = this.userForm.value;
+        const user: UserDTO = this.userForm.getRawValue();
 
         user.birthdate = new Date(user.birthdate).toISOString().split('T')[0];
 
@@ -103,6 +105,10 @@ export class UserFormComponent implements OnInit {
                 }
             );
         }
+    }
+
+    isAdmin(): boolean {
+        return this.authService.isAdmin();
     }
 
     private handleError(error: any): void {
